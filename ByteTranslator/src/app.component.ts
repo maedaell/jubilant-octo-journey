@@ -1,42 +1,51 @@
 import { Component } from '@angular/core';
-// import { ExchangeService } from './exchange.service';
+import { ByteConverterService } from './byte-converter.service';
 
 @Component({
   selector: 'byte-converter',
-  template: '<byte-select></byte-select>'
-  // template: `
-  //   <input type="number" [(ngModel)]="baseAmount"
-  //     [class.error]="isInvalid(baseAmount)">
-  //   <currency-select [(selected)]="baseCurrency"></currency-select>
-  //   = <strong>{{targetAmount | fixed:2}}</strong>
-  //   <currency-select [(selected)]="targetCurrency"></currency-select>
-  //   <p *ngIf="isInvalid(baseAmount)">Please enter a valid amount</p>
-  // `,
-  // styles: [`
-  //   input[type=number] {
-  //     width: 10ex;
-  //     text-align: right;
-  //   }
-  //   .error {
-  //     background-color: #ff6666;
-  //   }
-  // `]
+  template: `
+     <input type="number" [(ngModel)]="qtde"
+       [class.error]="isInvalid(qtde)">
+    <byte-select [(selected)]="base"></byte-select>
+    <byte-select [(selected)]="target"></byte-select>
+    <button (click)="convert()">Converter</button>
+    <strong>{{result | fixed:4}}</strong>
+     <p *ngIf="isInvalid(qtde)">Tem que ser um numero</p>
+    `,
+    styles: [`
+      input[type=number] {
+        width: 10ex;
+        text-align: right;
+      }
+      .error {
+        background-color: #ff6666;
+      }
+    `]
 })
 export class AppComponent {
 
-  // baseCurrency = 'USD';
-  // targetCurrency = 'GBP';
-  // baseAmount = 1;
-  //
-  // constructor(private exchangeService: ExchangeService) { }
-  //
-  // get targetAmount() {
-  //   const exchangeRate = this.exchangeService
-  //     .getExchangeRate(this.baseCurrency, this.targetCurrency);
-  //   return this.baseAmount * exchangeRate;
-  // }
-  //
-  // isInvalid(value) {
-  //   return !Number.isFinite(value);
-  // }
+  base = 'byte';
+  target = 'bit';
+  qtde = 1;
+  result = 0;
+  press = 'click';
+
+  constructor(private bcService: ByteConverterService) { }
+
+  get autoConvert() {
+    console.log(press);
+  }
+
+  function_test() {
+    console.log(this.press);
+  }
+
+  convert() {
+    const convertValue = this.bcService.getConvertValue(this.base, this.target);
+    this.result = this.qtde * convertValue;
+  }
+
+  isInvalid(value) {
+    return !Number.isFinite(value);
+  }
 }
