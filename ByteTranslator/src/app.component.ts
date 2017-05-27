@@ -32,10 +32,6 @@ export class AppComponent {
 
   constructor(private bcService: ByteConverterService) { }
 
-  get autoConvert() {
-    console.log(press);
-  }
-
   function_test() {
     console.log(this.press);
   }
