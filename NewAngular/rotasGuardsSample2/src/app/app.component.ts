@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './auth.service'
 
 @Component({
@@ -8,7 +9,12 @@ import { AuthService } from './auth.service'
 })
 export class AppComponent {
   title = 'app';
+  customRouter = "";
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
+  custom_navigate() {
+    // alert(this.customRouter);
+    this.router.navigate([this.customRouter]);
+  }
 }

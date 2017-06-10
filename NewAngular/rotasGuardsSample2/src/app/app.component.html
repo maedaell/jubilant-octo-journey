@@ -3,6 +3,11 @@
   <h1>
     Welcome to {{title}}!!
   </h1>
+  <script type="text/javascript">
+    
+  </script>
+  <input type="text" id="custoRouter" [(ngModel)]="customRouter" /><button (click)="custom_navigate()" >Go</button> <br />
+
   <a routerLink="/loggedRoute" routerLinkActive="active">loggedRoute</a>
   <a routerLink="/login" routerLinkActive="active">login</a>
   <p *ngIf="authService.isLogged">Already logged</p>
