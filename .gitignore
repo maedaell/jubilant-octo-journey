@@ -6,3 +6,6 @@ Contacts/node_modules
 Contacts/app
 NewAngular/rotasGuardsSample/node_modules
 NewAngular/rotasGuardsSample2/node_modules
+Alunos2/node_modules
+*.swp
+*.swo
