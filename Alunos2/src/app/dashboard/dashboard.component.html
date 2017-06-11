@@ -15,4 +15,12 @@
           </ng-template>
        </p-dataList>
     </p-accordionTab>
+
+    <p-accordionTab header="Disciplina" [selected]="true">
+       <p-dataList [value]="listaDisciplina" >
+          <ng-template let-disciplina pTemplate="item">
+          {{disciplina.nome}}
+          </ng-template>
+       </p-dataList>
+    </p-accordionTab>
 </p-accordion>

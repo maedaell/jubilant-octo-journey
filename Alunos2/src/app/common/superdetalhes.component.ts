@@ -34,8 +34,6 @@ export class SuperDetalhes {
   salvar() {
     this.service.add(this.selecionado)
       .then((data) => this.router.navigate(['../..'], { relativeTo: this.route }));
-
-
   }
 
 

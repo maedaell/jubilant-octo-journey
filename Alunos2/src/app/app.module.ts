@@ -12,8 +12,10 @@ import { AccordionModule,GrowlModule, DataListModule} from 'primeng/primeng';   
 import { ToolbarModule,ButtonModule,SplitButtonModule} from 'primeng/primeng';
 import { CursoService } from './curso.service';
 import { AlunoService } from './aluno.service';
+import { DisciplinaService } from './disciplina.service';
 import { CursoModule } from './curso/curso.module';
 import { AlunoModule } from './aluno/aluno.module';
+import { DisciplinaModule } from './disciplina/disciplina.module';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,12 @@ import { AlunoModule } from './aluno/aluno.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CursoModule, AlunoModule,
+    CursoModule, AlunoModule, DisciplinaModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule
   ],
-  providers: [AlunoService, CursoService],
+  providers: [AlunoService, CursoService, DisciplinaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
