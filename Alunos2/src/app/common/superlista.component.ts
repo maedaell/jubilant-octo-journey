@@ -21,7 +21,7 @@ export class SuperLista {
   }
 
   edita(id) {
-    this.router.navigate(['detalhes',id],{relativeTo: this.route});
+    this.router.navigate(['detalhe',id],{relativeTo: this.route});
   }
 
   remove(id) {
