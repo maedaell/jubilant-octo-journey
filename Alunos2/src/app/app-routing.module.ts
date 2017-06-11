@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { DashboardComponent } from "app/dashboard/dashboard.component";
 
 const routes: Routes = [
@@ -21,13 +21,13 @@ const routes: Routes = [
 })
 export class AppRoutingModule { 
 
-  constructor(r:router){
+  constructor(r:Router){
     this.logarotas("/",r.config);
   }
 
-  logarotas(pai:string,rotas:routes){
+  logarotas(pai:string,rotas:Routes){
     for (let i=0;i<rotas.length;i++){
-      console.log("path:",pai,rotas[i].path,rotas[i].component?rotas[i].component:"-->"+rotas[i].redirectto);
+      console.log("path:",pai,rotas[i].path,rotas[i].component?rotas[i].component:"-->"+rotas[i].redirectTo);
       if (rotas[i].children){
         this.logarotas(rotas[i].path+"/",rotas[i].children);
       }

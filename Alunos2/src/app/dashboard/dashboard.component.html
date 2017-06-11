@@ -6,4 +6,13 @@
           </ng-template>
        </p-dataList>
     </p-accordionTab>
+
+    <p-accordionTab header="Aluno" [selected]="true">
+       <p-dataList [value]="listaAluno" >
+          <ng-template let-aluno pTemplate="item">
+          {{aluno.nome}}
+          {{aluno.curso}}
+          </ng-template>
+       </p-dataList>
+    </p-accordionTab>
 </p-accordion>

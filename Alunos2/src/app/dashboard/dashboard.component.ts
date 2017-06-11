@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private cursoService:CursoService, private alunoService: AlunoService) { }
 
   ngOnInit() {
+    this.atualiza();
   }
 
   atualiza(){
