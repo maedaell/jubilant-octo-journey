@@ -23,14 +23,15 @@ export class DetalheComponent extends SuperDetalhes implements OnInit {
   }
 
   inserirAluno(){
-     console.log(this.selecionado.alunos,this.aluno);
-     if (!this.selecionado.alunos){
-       this.selecionado.alunos=[];
-     }
-     this.selecionado.alunos.push(this.aluno);
-     this.aluno=null;
-     console.log(this.selecionado);
-     console.log(this);
+    console.log(this.selecionado.alunos,this.aluno);
+    if (!this.selecionado.alunos){
+      this.selecionado.alunos=[];
+    }
+    this.selecionado.alunos.push(this.aluno);
+    this.selecionado.alunos = [...this.selecionado.alunos] //ajuste tecnico
+    this.aluno=null;
+    console.log(this.selecionado);
+    console.log(this);
   }
 
   ngOnInit() {
